@@ -1,0 +1,189 @@
+{
+  "version": "1.0.0",
+  "created_at": "2026-04-06T11:17:58.443433+00:00",
+  "updated_at": "2026-04-06T11:34:56.723399+00:00",
+  "pages": {
+    "page_01_project_setup": {
+      "title": "PAGE 01 — 프로젝트 초기 설정",
+      "dependencies": [],
+      "criteria": [
+        "`npx expo start` 실행 시 기본 화면 정상 출력",
+        "TypeScript 오류 없음",
+        "폴더 구조 생성 완료"
+      ],
+      "criteria_checked": [
+        false,
+        false,
+        false
+      ],
+      "status": "completed",
+      "started_at": "2026-04-06T11:26:56.382745+00:00",
+      "completed_at": "2026-04-06T11:29:34.983736+00:00"
+    },
+    "page_02_types_constants": {
+      "title": "PAGE 02 — 공통 타입 & 상수 정의",
+      "dependencies": [
+        "page_01"
+      ],
+      "criteria": [
+        "모든 타입 파일 TypeScript 오류 없음",
+        "Colors 상수에 무채색 + 포인트 컬러 한 가지만 정의됨"
+      ],
+      "criteria_checked": [
+        false,
+        false
+      ],
+      "status": "completed",
+      "started_at": "2026-04-06T11:29:34.984216+00:00",
+      "completed_at": "2026-04-06T11:30:05.339472+00:00"
+    },
+    "page_03_storage_layer": {
+      "title": "PAGE 03 — 스토리지 레이어",
+      "dependencies": [
+        "page_02"
+      ],
+      "criteria": [
+        "save() 호출 후 loadAll()로 동일 데이터 반환 확인",
+        "deleteById() 후 해당 레코드 제거 확인",
+        "빈 상태에서 loadAll() 빈 배열 반환 확인"
+      ],
+      "criteria_checked": [
+        false,
+        false,
+        false
+      ],
+      "status": "completed",
+      "started_at": "2026-04-06T11:30:05.340015+00:00",
+      "completed_at": "2026-04-06T11:30:23.551922+00:00"
+    },
+    "page_04_ai_service": {
+      "title": "PAGE 04 — AI 분석 서비스",
+      "dependencies": [
+        "page_02"
+      ],
+      "criteria": [
+        "실제 음식 이미지 URI 입력 시 FoodAnalysisResult 반환",
+        "분석 실패 시 에러 throw (UI에서 재시도 안내 가능)",
+        "응답에 detectedFoodName, estimatedCaloriesKcal, analysisSummary 포함"
+      ],
+      "criteria_checked": [
+        false,
+        false,
+        false
+      ],
+      "status": "completed",
+      "started_at": "2026-04-06T11:30:23.552536+00:00",
+      "completed_at": "2026-04-06T11:31:47.356385+00:00"
+    },
+    "page_05_main_screen": {
+      "title": "PAGE 05 — 메인 화면 (홈)",
+      "dependencies": [
+        "page_01",
+        "page_02"
+      ],
+      "criteria": [
+        "두 버튼 터치 이벤트 연결 (PAGE 06으로 이동)",
+        "빈 상태 문구 표시",
+        "무채색 + 포인트 컬러 한 가지 규칙 준수"
+      ],
+      "criteria_checked": [
+        false,
+        false,
+        false
+      ],
+      "status": "completed",
+      "started_at": "2026-04-06T11:31:47.356937+00:00",
+      "completed_at": "2026-04-06T11:32:31.256359+00:00"
+    },
+    "page_06_camera_picker": {
+      "title": "PAGE 06 — 카메라 & 이미지 선택",
+      "dependencies": [
+        "page_04",
+        "page_05"
+      ],
+      "criteria": [
+        "카메라 촬영 → imageUri 반환",
+        "갤러리 선택 → imageUri 반환",
+        "분석 중 로딩 오버레이 표시",
+        "권한 거부 시 안내 문구 표시"
+      ],
+      "criteria_checked": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "status": "completed",
+      "started_at": "2026-04-06T11:32:31.256951+00:00",
+      "completed_at": "2026-04-06T11:32:56.153321+00:00"
+    },
+    "page_07_result_screen": {
+      "title": "PAGE 07 — 분석 결과 화면",
+      "dependencies": [
+        "page_03",
+        "page_04",
+        "page_05"
+      ],
+      "criteria": [
+        "결과 화면에 음식명, 칼로리, 설명 표시",
+        "저장하기 → PAGE 03 save() 호출 후 히스토리 화면 이동",
+        "다시 촬영 → 메인 화면으로 복귀",
+        "칼로리는 \"약 450 kcal\" 형식으로 표시"
+      ],
+      "criteria_checked": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "status": "completed",
+      "started_at": "2026-04-06T11:32:56.153862+00:00",
+      "completed_at": "2026-04-06T11:33:42.373577+00:00"
+    },
+    "page_08_history_screen": {
+      "title": "PAGE 08 — 히스토리 화면",
+      "dependencies": [
+        "page_03",
+        "page_02"
+      ],
+      "criteria": [
+        "loadAll() 결과 최신순 정렬 표시",
+        "빈 상태 화면 표시",
+        "오늘 날짜 기준 칼로리 합계 계산",
+        "카드 탭 시 상세 또는 삭제 가능 (선택)"
+      ],
+      "criteria_checked": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "status": "completed",
+      "started_at": "2026-04-06T11:33:42.374044+00:00",
+      "completed_at": "2026-04-06T11:34:22.762613+00:00"
+    },
+    "page_09_navigation_integration": {
+      "title": "PAGE 09 — 네비게이션 & 앱 통합",
+      "dependencies": [
+        "page_05",
+        "page_07",
+        "page_08"
+      ],
+      "criteria": [
+        "탭 전환이 정상 동작",
+        "메인 → 결과 화면 → 히스토리 전체 흐름 완성",
+        "iOS / Android 모두 정상 동작 확인",
+        "`npx expo start` 후 전체 기능 시연 가능"
+      ],
+      "criteria_checked": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "status": "completed",
+      "started_at": "2026-04-06T11:34:22.763281+00:00",
+      "completed_at": "2026-04-06T11:34:56.723386+00:00"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Administrator/Desktop/바이브코딩/바이브코딩/\\(앱/\\)/**)",
+      "Bash(python checkpoint.py init)",
+      "Bash(python checkpoint.py status)",
+      "Bash(python checkpoint.py next)",
+      "Bash(python checkpoint.py check page_01_project_setup 0)",
+      "Bash(python checkpoint.py show page_01_project_setup)",
+      "Bash(python checkpoint.py reset page_01_project_setup)",
+      "Bash(python .harness/runner.py status)",
+      "Bash(python .harness/runner.py next)",
+      "Bash(python .harness/checkpoint.py reset page_01_project_setup)",
+      "Bash(python .harness/runner.py)",
+      "Bash(python .harness/runner.py run)",
+      "Bash(npx create-expo-app:*)",
+      "Bash(npx expo:*)",
+      "Bash(npx tsc:*)",
+      "Bash(python .harness/runner.py done)",
+      "Bash(npm install:*)",
+      "Bash(ls /c/Users/Administrator/Desktop/바이브코딩/바이브코딩\\\\\\(앱\\\\\\)/snapcal/*.env)",
+      "Bash(eas --version)"
+    ]
+  }
+}

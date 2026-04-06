@@ -1,0 +1,17 @@
+export const Strings = {
+  appName: 'SnapCal',
+  cameraButtonLabel: '사진 촬영',
+  galleryButtonLabel: '갤러리에서 선택',
+  saveButtonLabel: '저장하기',
+  retakeButtonLabel: '다시 촬영',
+  reanalyzeButtonLabel: '재분석',
+  analysisLoadingMessage: '음식을 분석 중입니다...',
+  analysisErrorMessage: '분석에 실패했습니다. 다시 시도해 주세요.',
+  analysisSummaryPrefix: '약 ',
+  analysisSummaryUnit: ' kcal',
+  historyTitle: '기록',
+  historyEmptyTitle: '아직 기록이 없어요',
+  historyEmptySubtitle: '음식 사진을 찍어 칼로리를 기록해보세요.',
+  saveSuccessMessage: '저장되었습니다.',
+  todayCalorieSummaryLabel: '오늘 총 섭취',
+} as const;
