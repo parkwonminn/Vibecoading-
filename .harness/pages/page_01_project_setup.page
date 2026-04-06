@@ -1,0 +1,27 @@
+# PAGE 01 — 프로젝트 초기 설정
+
+## 목표
+Expo + TypeScript 기반 크로스 플랫폼 프로젝트를 생성하고 의존성을 설치한다.
+
+## 작업 파일
+- `package.json`
+- `tsconfig.json`
+- `app.json`
+- `.gitignore`
+- `app/_layout.tsx` (루트 레이아웃)
+
+## 설치 의존성
+```bash
+npx create-expo-app snapcal --template expo-template-blank-typescript
+cd snapcal
+npx expo install expo-camera expo-image-picker @react-native-async-storage/async-storage
+npx expo install expo-router react-native-safe-area-context react-native-screens
+```
+
+## 완료 기준
+- [ ] `npx expo start` 실행 시 기본 화면 정상 출력
+- [ ] TypeScript 오류 없음
+- [ ] 폴더 구조 생성 완료
+
+## 의존성
+- 없음 (시작점)

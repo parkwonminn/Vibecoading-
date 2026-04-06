@@ -1,0 +1,52 @@
+# PAGE 02 — 공통 타입 & 상수 정의
+
+## 목표
+앱 전체에서 사용하는 타입과 디자인 상수를 정의한다.
+
+## 작업 파일
+- `types/food-analysis.ts`
+- `types/calorie-history.ts`
+- `constants/colors.ts`
+- `constants/strings.ts`
+
+## 핵심 코드
+
+### types/food-analysis.ts
+```ts
+export type FoodAnalysisResult = {
+  detectedFoodName: string;
+  estimatedCaloriesKcal: number;
+  analysisSummary: string;
+};
+```
+
+### types/calorie-history.ts
+```ts
+export type CalorieHistoryRecord = {
+  historyRecordId: string;
+  localImageUri: string;
+  detectedFoodName: string;
+  estimatedCaloriesKcal: number;
+  analysisSummary: string;
+  createdAtIsoString: string;
+};
+```
+
+### constants/colors.ts
+```ts
+export const Colors = {
+  background: '#FFFFFF',
+  surface: '#F5F5F5',
+  textPrimary: '#1A1A1A',
+  textSecondary: '#757575',
+  point: '#FF6B35',       // 포인트 컬러 — CTA, 칼로리 수치에만 사용
+  border: '#E0E0E0',
+};
+```
+
+## 완료 기준
+- [ ] 모든 타입 파일 TypeScript 오류 없음
+- [ ] Colors 상수에 무채색 + 포인트 컬러 한 가지만 정의됨
+
+## 의존성
+- PAGE 01

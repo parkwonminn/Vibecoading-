@@ -1,0 +1,33 @@
+# PAGE 07 — 분석 결과 화면
+
+## 목표
+AI 분석 결과(음식명, 칼로리, 설명)를 사용자에게 보여주고
+저장 또는 재촬영을 선택할 수 있게 한다.
+
+## 작업 파일
+- `app/result.tsx`
+- `components/calorie-result-card.tsx`
+- `components/food-image-preview.tsx`
+
+## UI 구성
+```
+[음식 이미지 전체폭 표시]
+
+[결과 카드]
+  detectedFoodName       (텍스트 기본색)
+  약 {estimatedCalories} kcal   ← #FF6B35 포인트 컬러
+  analysisSummary        (보조 텍스트)
+
+[하단 버튼]
+  [ 저장하기 ]       ← 포인트 컬러 버튼
+  [ 다시 촬영 ]      ← 무채색 버튼
+```
+
+## 완료 기준
+- [ ] 결과 화면에 음식명, 칼로리, 설명 표시
+- [ ] 저장하기 → PAGE 03 save() 호출 후 히스토리 화면 이동
+- [ ] 다시 촬영 → 메인 화면으로 복귀
+- [ ] 칼로리는 "약 450 kcal" 형식으로 표시
+
+## 의존성
+- PAGE 03, PAGE 04, PAGE 05

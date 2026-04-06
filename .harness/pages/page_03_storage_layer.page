@@ -1,0 +1,35 @@
+# PAGE 03 — 스토리지 레이어
+
+## 목표
+AsyncStorage 기반 로컬 저장소를 구현한다. 이후 expo-sqlite 교체를 고려해 StorageAdapter로 추상화한다.
+
+## 작업 파일
+- `storage/storage-adapter.ts`       (인터페이스)
+- `storage/calorie-history/async-storage-adapter.ts`
+- `storage/calorie-history/index.ts` (외부 노출 API)
+
+## 핵심 코드
+
+### storage/storage-adapter.ts
+```ts
+export interface StorageAdapter<T> {
+  save(record: T): Promise<void>;
+  loadAll(): Promise<T[]>;
+  deleteById(id: string): Promise<void>;
+}
+```
+
+### storage/calorie-history/async-storage-adapter.ts
+```ts
+// AsyncStorage를 사용해 CalorieHistoryRecord를 저장/조회/삭제
+// 키: 'calorie_history_records'
+// 저장 형식: JSON 배열
+```
+
+## 완료 기준
+- [ ] save() 호출 후 loadAll()로 동일 데이터 반환 확인
+- [ ] deleteById() 후 해당 레코드 제거 확인
+- [ ] 빈 상태에서 loadAll() 빈 배열 반환 확인
+
+## 의존성
+- PAGE 02

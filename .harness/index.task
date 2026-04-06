@@ -1,0 +1,24 @@
+# SnapCal — Harness 작업 인덱스
+
+## 실행 순서 (직렬 처리)
+| 순서 | 파일 | 내용 | 의존성 | 상태 |
+|------|------|------|--------|------|
+| 01 | page_01_project_setup.page      | Expo + TS 프로젝트 초기화     | 없음              | ⬜ TODO |
+| 02 | page_02_types_constants.page    | 공통 타입 & 디자인 상수        | 01                | ⬜ TODO |
+| 03 | page_03_storage_layer.page      | AsyncStorage 로컬 저장소      | 02                | ⬜ TODO |
+| 04 | page_04_ai_service.page         | Claude Vision AI 분석 서비스  | 02                | ⬜ TODO |
+| 05 | page_05_main_screen.page        | 메인 홈 화면 UI               | 01, 02            | ⬜ TODO |
+| 06 | page_06_camera_picker.page      | 카메라 & 갤러리 이미지 획득    | 04, 05            | ⬜ TODO |
+| 07 | page_07_result_screen.page      | 분석 결과 화면                | 03, 04, 05        | ⬜ TODO |
+| 08 | page_08_history_screen.page     | 히스토리 조회 화면             | 03, 02            | ⬜ TODO |
+| 09 | page_09_navigation_integration.page | 네비게이션 & 전체 통합    | 05, 07, 08 (전체) | ⬜ TODO |
+
+## 상태 표기
+- ⬜ TODO     : 작업 대기
+- 🔄 IN PROGRESS : 작업 중
+- ✅ DONE     : 완료
+- ❌ BLOCKED  : 의존성 미완료로 차단
+
+## 체크포인트 방식
+각 페이지 완료 후 상태를 ✅ DONE 으로 변경하고 다음 페이지로 진행한다.
+파이썬 스크립트(checkpoint.py)로 상태를 직렬 추적한다. (PAGE 02 작업)
